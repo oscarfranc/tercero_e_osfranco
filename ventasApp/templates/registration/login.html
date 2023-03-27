@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h1 class="text-center">Iniciar Sesión</h1>
+  <form class="col-10 col-md-4 offset-md-4" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Usuario</label>
+      <input type="text" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Ingrese su usuario">
+      <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Contraseña</label>
+      <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Digite su Contraseña">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+      <a href="{% url 'register' %}" class="btn btn-primary">Registrarse</a>
+    </div>
+  </form>
+</body>
+
+</html>
